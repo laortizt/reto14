@@ -5,18 +5,22 @@ buttons.forEach(button => {
         const x = e.clientX
         const y = e.clientY
 
-        //revisar 
-        //console.log(x,y);
-
         const buttonTop = e.target.offsetTop
         const buttonLeft = e.target.offsetLeft
-
-        //console.log(buttonTop,buttonLeft);
 
         const xInside = x - buttonLeft
         const yInside = y - buttonTop
 
-        //console.log(xInside,yInside);
+        //aquii
 
+        const circle = document.createElement('span')
+        circle.classList.add('circle')
+        circle.style.top = yInside + 'px'
+        circle.style.left = xInside + 'px'
+
+        this.appendChild(circle)
+
+        setTimeout(() => circle.remove(), 500)
     })
+
 })
